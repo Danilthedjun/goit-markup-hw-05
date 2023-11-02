@@ -517,7 +517,7 @@ ol {
   background-color: #31d0aa;
 }
 
-.user-email-label {
+.subscribe-text {
   display: block;
   color: #ffffff;
   font-size: 16px;
@@ -528,42 +528,45 @@ ol {
 }
 .subscribe-footer-form {
   display: flex;
-  align-items: flex-end;
+  gap: 24px;
 }
 .user-email-input {
   width: 264px;
   height: 40px;
   padding-left: 16px;
-  margin-right: 24px;
   color: #ffffff;
-  background: #2e2f42;
+  background: transparent;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  padding-left: 16px;
   border-radius: 4px;
   border: 1px solid #fff;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
 }
 .subscribe-btn {
   display: flex;
+  min-width: 165px;
+  height: 40px;
   padding: 8px 24px;
   justify-content: center;
   align-items: center;
-  gap: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5em;
+  letter-spacing: 0.04em;
+  color: #fff;
   border: none;
   border-radius: 4px;
   background: #4d5ae5;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.footer-icon {
+  margin-left: 16px;
+}
 .subscribe-btn:hover,
 .subscribe-btn:focus {
   background-color: #404bbf;
-}
-
-.subscribe-btn-text {
-  color: #fff;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.5em;
-  letter-spacing: 0.04em;
 }
 .user-email-input::placeholder {
   color: #fff;
@@ -582,16 +585,18 @@ ol {
   height: 100%;
   background: rgba(46, 47, 66, 0.4);
 
-  opacity: 0;
+  /* opacity: 0;
   visibility: hidden;
-  pointer-events: none;
-  transition: opacity 500ms ease-out, visibility 500ms ease-out;
+  pointer-events: none; */
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.backdrop.is-open {
+/* .backdrop.is-open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-}
+} */
+
 /* modal styles */
 .modal {
   position: absolute;
@@ -599,15 +604,21 @@ ol {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 408px;
-  height: 584px;
+  min-height: 584px;
   border-radius: 4px;
   background: #fcfcfc;
   padding: 72px 24px 24px 24px;
+  box-shadow: зі значенням 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-btm {
   position: absolute;
-  top: 32px;
-  right: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 24px;
+  right: 24px;
   width: 24px;
   height: 24px;
   padding: 0px;
@@ -617,12 +628,17 @@ ol {
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: #e7e9fc;
-  transition: fill 500ms ease-out, background-color 500ms ease-out;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-btm:hover,
 .modal-btm:focus {
   fill: #fff;
   background-color: #404bbf;
+  border: none;
+}
+.modal-icon {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-form-text {
   color: #2e2f42;
